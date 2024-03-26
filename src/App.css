@@ -1,16 +1,13 @@
 .image-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  /* Ensure images don't overflow the container */
 }
 
 .image-container {
-  flex: 1;
-  max-width: calc(50% - 10px);
-  /* Set maximum width to half of the container width */
+  width: 100%;
 }
 
 .image-container img {
@@ -18,10 +15,22 @@
   height: auto;
 }
 
-/* Adjustments for smaller screen sizes */
-@media (max-width: 768px) {
-  .image-container {
-    max-width: calc(100% - 10px);
-    /* Set maximum width to full container width */
-  }
+.layout-1 .image-grid {
+  grid-template-columns: 1fr;
+  /* Single column for layout 1 */
+}
+
+.layout-2 .image-grid {
+  grid-template-columns: repeat(2, 1fr);
+  /* Two columns for layout 2 */
+}
+
+.layout-3 .image-grid {
+  grid-template-columns: 1fr 1fr;
+  /* Two columns for layout 3 */
+}
+
+.layout-3 .image-container:nth-child(3) {
+  grid-column: span 2;
+  /* Third image spans two columns for layout 3 */
 }
