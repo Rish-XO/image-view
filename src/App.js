@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './App.css'; // Import CSS file for styling
+import './App.css'; 
 
 const ImageLayout = () => {
-  const [layout, setLayout] = useState(1); // State to manage layout selection
+  const [layout, setLayout] = useState(1); 
 
   // Array of image URLs
   const images = [
