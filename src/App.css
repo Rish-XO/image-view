@@ -1,71 +1,27 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .image-grid {
-  display: grid;
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  /* Ensure images don't overflow the container */
 }
 
 .image-container {
-  width: 100%;
+  flex: 1;
+  max-width: calc(50% - 10px);
+  /* Set maximum width to half of the container width */
 }
 
 .image-container img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
-.layout-1 .image-grid {
-  grid-template-columns: 1fr;
-}
-
-.layout-2 .image-grid {
-  grid-template-columns: 1fr 1fr; /* Split into two equal columns */
-}
-
-.layout-3 .image-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.layout-4 .image-grid {
-  grid-template-columns: repeat(4, 1fr);
+/* Adjustments for smaller screen sizes */
+@media (max-width: 768px) {
+  .image-container {
+    max-width: calc(100% - 10px);
+    /* Set maximum width to full container width */
+  }
 }
